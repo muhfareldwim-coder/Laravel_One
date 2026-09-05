@@ -1,10 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'index'])->name('products.list');
